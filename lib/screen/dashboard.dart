@@ -1,4 +1,3 @@
-import 'package:dayone/screen/forgot_password.dart';
 import 'package:dayone/screen/home.dart';
 import 'package:dayone/screen/profile.dart';
 import 'package:dayone/screen/settings.dart';
@@ -11,7 +10,6 @@ class DashboardPage extends StatefulWidget {
   State<DashboardPage> createState() => _DashboardPageState();
 }
 
-
 class _DashboardPageState extends State<DashboardPage> {
   var _screens = [SettingsPage(), ProfilePage(), MainPage()];
 
@@ -21,7 +19,7 @@ class _DashboardPageState extends State<DashboardPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child:_screens[_selectedIndex],
+        child: _screens[_selectedIndex],
       ),
       bottomNavigationBar: BottomNavigationBar(
         items: const [
@@ -33,12 +31,14 @@ class _DashboardPageState extends State<DashboardPage> {
         ],
         currentIndex: _selectedIndex,
         onTap: (index) {
-          setState(() {
-            _selectedIndex = index;
-            print('===================');
-            print(index);
-            print('===================');
-          });
+          setState(
+            () {
+              _selectedIndex = index;
+              print('===================');
+              print(index);
+              print('===================');
+            },
+          );
         },
       ),
     );

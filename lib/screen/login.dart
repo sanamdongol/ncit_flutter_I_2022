@@ -18,69 +18,74 @@ class _LoginPageState extends State<LoginPage> {
       body: SafeArea(
         child: Form(
           key: _formKey,
-          child: Column(
-            children: [
-              TextFormField(
-                validator: (value) {
-                  if (value!.isEmpty) {
-                    return 'Enter your name';
-                  }
-                  if (value.split(" ").length == 1) {
-                    return 'Enter your full name';
-                  }
-                  return null;
-                },
-                decoration: InputDecoration(hintText: 'Enter full name'),
-              ),
-              TextFormField(
-                obscureText: _isPasswordHidden,
-                validator: (value) {
-                  if (value!.isEmpty) {
-                    return 'Enter your password';
-                  }
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Column(
+              children: [
+                TextFormField(
+                  keyboardType: TextInputType.name,
+                  validator: (value) {
+                    if (value!.isEmpty) {
+                      return 'Enter your name';
+                    }
+                    if (value.split(" ").length == 1) {
+                      return 'Enter your full name';
+                    }
+                    return null;
+                  },
+                  decoration: InputDecoration(hintText: 'Enter full name'),
+                ),
+                TextFormField(
+                  keyboardType: TextInputType.number,
+                  obscureText: _isPasswordHidden,
+                  validator: (value) {
+                    if (value!.isEmpty) {
+                      return 'Enter your password';
+                    }
 
-                  if (value.length < 6) {
-                    return 'Password must be more than 5';
-                  }
-                  return null;
-                },
-                decoration: InputDecoration(
-                  prefix: Icon(Icons.lock),
-                  hintText: 'Enter password',
-                  suffixIcon: IconButton(
-                    icon: Icon(_isPasswordHidden
-                        ? Icons.visibility
-                        : Icons.visibility_off),
-                    onPressed: () {
-                      setState(
-                        () {
-                          _isPasswordHidden = !_isPasswordHidden;
-                        },
-                      );
-                    },
+                    if (value.length < 6) {
+                      return 'Password must be more than 5';
+                    }
+                    return null;
+                  },
+                  decoration: InputDecoration(
+                    prefix: Icon(Icons.lock),
+                    hintText: 'Enter password',
+                    suffixIcon: IconButton(
+                      icon: Icon(_isPasswordHidden
+                          ? Icons.visibility
+                          : Icons.visibility_off),
+                      onPressed: () {
+                        setState(
+                          () {
+                            _isPasswordHidden = !_isPasswordHidden;
+                          },
+                        );
+                      },
+                    ),
                   ),
                 ),
-              ),
-              ElevatedButton(
-                onPressed: () {
-                  if (_formKey.currentState!.validate()) {
-                    /* ScaffoldMessenger.of(context).showSnackBar(
-                      SnackBar(
-                        content: Text('all good ready to launch'),
-                      ),
-                    );
-                    print('Form validate success');*/
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => DashboardPage(),
-                      ),
-                    );
-                  }
-                },
-                child: Text('Login'),
-              ),
-            ],
+                ElevatedButton(
+                  onPressed: () {
+                    if (_formKey.currentState!.validate()) {
+                      /* ScaffoldMessenger.of(context).showSnackBar(
+                        SnackBar(
+                          content: Text('all good ready to launch'),
+                        ),
+                      );
+                      print('Form validate success');*/
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => DashboardPage(),
+                        ),
+                      );
+                    }
+                  },
+                  child: Text('Login'),
+                ),
+              ],
+            ),
           ),
         ),
       ),
