@@ -16,15 +16,16 @@ class _HorizontalListState extends State<HorizontalList> {
           scrollDirection: Axis.horizontal,
           children: [
             Container(
-                color: Colors.cyan,
-                width: 160,
-                child: Text(
-                  'First Item',
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold),
-                )),
+              color: Colors.cyan,
+              width: 160,
+              child: Text(
+                'First Item',
+                style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold),
+              ),
+            ),
             Container(
                 color: Colors.red, width: 160, child: Text('Second Item')),
             Container(

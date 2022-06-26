@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import 'grid_view.dart';
 import 'horizontal_list.dart';
 
 class MainPage extends StatefulWidget {
@@ -38,19 +39,40 @@ class _MainPageState extends State<MainPage> {
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          OutlinedButton(
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => HorizontalList(),
+          Row(
+            children: [
+              OutlinedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => HorizontalList(),
+                    ),
+                  );
+                },
+                child: Text(
+                  "Horizontal List",
+                  style: TextStyle(fontSize: 25),
                 ),
-              );
-            },
-            child: Text(
-              "Horizontal List",
-              style: TextStyle(fontSize: 25),
-            ),
+              ),
+              SizedBox(
+                width: 10,
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => MyGridViewPage(),
+                    ),
+                  );
+                },
+                child: Text(
+                  'Grid View',
+                  style: TextStyle(fontSize: 25),
+                ),
+              )
+            ],
           ),
           Expanded(
             child: ListView.builder(
