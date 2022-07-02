@@ -24,11 +24,30 @@ class _MyGridViewPageState extends State<MyGridViewPage> {
     return Scaffold(
       body: GridView.count(
         crossAxisCount: 2,
-        children: List.generate(_icons.length, (index) {
+        children: List.generate(6, (index) {
           return Center(
             child: Column(
-
               children: [
+                Text('Count'),
+                Icon(
+                  _icons[index],
+                ),
+                Text('Count'),
+                Icon(
+                  _icons[index],
+                ),
+                Text('Count'),
+                Icon(
+                  _icons[index],
+                ),
+                Text('Count'),
+                Icon(
+                  _icons[index],
+                ),
+                Text('Count'),
+                Icon(
+                  _icons[index],
+                ),
                 Text('Count'),
                 Icon(
                   _icons[index],

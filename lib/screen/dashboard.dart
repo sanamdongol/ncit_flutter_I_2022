@@ -4,7 +4,7 @@ import 'package:dayone/screen/settings.dart';
 import 'package:flutter/material.dart';
 
 class DashboardPage extends StatefulWidget {
-  const DashboardPage({Key? key}) : super(key: key);
+  const DashboardPage(String randomString, {Key? key}) : super(key: key);
 
   @override
   State<DashboardPage> createState() => _DashboardPageState();

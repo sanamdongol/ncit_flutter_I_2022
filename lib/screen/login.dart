@@ -19,7 +19,7 @@ class _LoginPageState extends State<LoginPage> {
         child: Form(
           key: _formKey,
           child: Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: const EdgeInsets.only(top: 90.0, left: 8.0, right: 8.0),
             child: Column(
               children: [
                 TextFormField(
@@ -77,7 +77,8 @@ class _LoginPageState extends State<LoginPage> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => DashboardPage(),
+                          builder: (context) =>
+                              DashboardPage("From Login page"),
                         ),
                       );
                     }
