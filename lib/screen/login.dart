@@ -12,6 +12,9 @@ class _LoginPageState extends State<LoginPage> {
   var _formKey = GlobalKey<FormState>();
   bool _isPasswordHidden = true;
 
+  var userNameController = TextEditingController();
+  var userPasswordController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,6 +26,7 @@ class _LoginPageState extends State<LoginPage> {
             child: Column(
               children: [
                 TextFormField(
+                  controller: userNameController,
                   keyboardType: TextInputType.name,
                   validator: (value) {
                     if (value!.isEmpty) {
@@ -36,6 +40,7 @@ class _LoginPageState extends State<LoginPage> {
                   decoration: InputDecoration(hintText: 'Enter full name'),
                 ),
                 TextFormField(
+                  controller: userPasswordController,
                   keyboardType: TextInputType.number,
                   obscureText: _isPasswordHidden,
                   validator: (value) {
@@ -74,11 +79,17 @@ class _LoginPageState extends State<LoginPage> {
                         ),
                       );
                       print('Form validate success');*/
+                      String userName = userNameController.text;
+                      String pass = userPasswordController.text;
+                      print(userName);
+                      print(pass);
+
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) =>
-                              DashboardPage("From Login page"),
+                          builder: (context) => DashboardPage(
+                              userNameController.text,
+                              userPasswordController.text),
                         ),
                       );
                     }

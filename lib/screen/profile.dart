@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
 class ProfilePage extends StatefulWidget {
-  const ProfilePage({Key? key}) : super(key: key);
+  String userName;
+
+  ProfilePage(this.userName);
 
   @override
   State<ProfilePage> createState() => _ProfilePageState();
@@ -10,6 +12,23 @@ class ProfilePage extends StatefulWidget {
 class _ProfilePageState extends State<ProfilePage> {
   @override
   Widget build(BuildContext context) {
-    return Container(color: Colors.red,);
+    return Scaffold(
+      body: SafeArea(
+        child: Column(
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  "Hello there! \n" + widget.userName,
+                  style: TextStyle(fontSize: 30),
+                ),
+                Text('helo row', style: TextStyle(fontSize: 30))
+              ],
+            )
+          ],
+        ),
+      ),
+    );
   }
 }

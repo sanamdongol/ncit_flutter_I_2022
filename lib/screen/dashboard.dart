@@ -4,16 +4,28 @@ import 'package:dayone/screen/settings.dart';
 import 'package:flutter/material.dart';
 
 class DashboardPage extends StatefulWidget {
-  const DashboardPage(String randomString, {Key? key}) : super(key: key);
+  String userName;
+  String password;
+
+  DashboardPage(this.userName, this.password);
 
   @override
   State<DashboardPage> createState() => _DashboardPageState();
 }
 
 class _DashboardPageState extends State<DashboardPage> {
-  var _screens = [SettingsPage(), ProfilePage(), MainPage()];
-
+  var _screens = [];
   var _selectedIndex = 0;
+
+  @override
+  void initState() {
+    super.initState();
+    _screens = [
+      SettingsPage(),
+      ProfilePage(widget.userName),
+      MainPage(),
+    ];
+  }
 
   @override
   Widget build(BuildContext context) {
