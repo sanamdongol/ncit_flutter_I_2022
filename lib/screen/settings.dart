@@ -13,6 +13,19 @@ class _SettingsPageState extends State<SettingsPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text('Settings'),
+        automaticallyImplyLeading: false,
+        actions: [
+          IconButton(
+            color: Colors.red,
+            onPressed: () {
+              print("access alarm clicked");
+            },
+            icon: Icon(Icons.access_alarm),
+          ),
+        ],
+      ),
       body: SafeArea(
         child: Column(
           children: [

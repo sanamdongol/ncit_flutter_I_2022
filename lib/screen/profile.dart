@@ -21,9 +21,26 @@ class _ProfilePageState extends State<ProfilePage> {
               children: [
                 Text(
                   "Hello there! \n" + widget.userName,
-                  style: TextStyle(fontSize: 30),
+                  style: TextStyle(
+                      fontSize: 30,
+                      fontFamily: 'Roboto',
+                      fontWeight: FontWeight.w500),
                 ),
-                Text('helo row', style: TextStyle(fontSize: 30))
+                Image.asset(
+                  'assets/images/lego.jpg',
+                  height: 80,
+                  width: 80,
+                  fit: BoxFit.cover,
+                ),
+                GestureDetector(
+                  onTap: () {
+                    print("Image clicked");
+                  },
+                  child: CircleAvatar(
+                    radius: 50,
+                    backgroundImage: AssetImage('assets/images/profile.jpeg'),
+                  ),
+                ),
               ],
             )
           ],
