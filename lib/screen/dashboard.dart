@@ -3,6 +3,8 @@ import 'package:dayone/screen/profile.dart';
 import 'package:dayone/screen/settings.dart';
 import 'package:flutter/material.dart';
 
+import 'semesterpages/semester.dart';
+
 class DashboardPage extends StatefulWidget {
   String userName;
   String password;
@@ -32,6 +34,36 @@ class _DashboardPageState extends State<DashboardPage> {
     return Scaffold(
       body: SafeArea(
         child: _screens[_selectedIndex],
+      ),
+      drawer: Drawer(
+        child: ListView(
+          children: [
+            ListTile(
+              leading: Icon(Icons.access_alarm),
+              title: Text("Item 1"),
+              trailing: Icon(Icons.ac_unit_rounded),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => DashboardPage("dgdfg", "dfgdf"),
+                  ),
+                );
+              },
+            ),
+            ListTile(
+              title: Text("Semester"),
+              trailing: Icon(Icons.ac_unit_rounded),
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => SemesterPage(),
+                    ));
+              },
+            ),
+          ],
+        ),
       ),
       bottomNavigationBar: BottomNavigationBar(
         items: const [
