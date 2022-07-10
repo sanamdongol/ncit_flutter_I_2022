@@ -33,8 +33,8 @@ class _SemesterOnePageState extends State<SemesterOnePage> {
                         Column(
                           children: [
                             Text('Total Credit Hours: 40 \n' +
-                                'Total Subjects: 6'),
-                            Text('Total Sports week: 1'),
+                                'Total Subjects: 6 \n' +
+                                'Total Sports week: 1'),
                           ],
                         ),
                       ],
