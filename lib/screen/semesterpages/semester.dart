@@ -43,7 +43,7 @@ class _SemesterPageState extends State<SemesterPage> {
           body: TabBarView(
             children: [
               SemesterOnePage(),
-              SemesterSecondPage(),
+              SecondSem(),
               SemesterThirdPage(),
               SemesterForthPage(),
               SemesterFifthPage(),
