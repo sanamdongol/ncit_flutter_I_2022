@@ -9,10 +9,9 @@ class SecondSem extends StatefulWidget {
 
 class _SecondSemState extends State<SecondSem> {
   var name = ' unknowning';
-
   String weekend = ' Friday';
-
   var _isVisible = false;
+  var _sliderValue = 10.0;
 
   @override
   Widget build(BuildContext context) {
@@ -62,6 +61,21 @@ class _SecondSemState extends State<SecondSem> {
               style: TextStyle(color: Colors.white, fontSize: 20),
             ),
           ),
+        ),
+        Slider(
+            value: _sliderValue,
+            min: 0,
+            max: 50,
+            label: _sliderValue.round().toString(),
+            onChanged: (value) {
+              setState(() {
+                _sliderValue = value;
+                print(_sliderValue);
+              });
+            }),
+        Text(
+          'Zooming in more',
+          style: TextStyle(fontSize: _sliderValue),
         ),
       ],
     );
