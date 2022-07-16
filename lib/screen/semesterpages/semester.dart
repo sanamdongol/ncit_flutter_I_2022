@@ -16,14 +16,46 @@ class SemesterPage extends StatefulWidget {
 }
 
 class _SemesterPageState extends State<SemesterPage> {
+  bool _isDarkTheme = false;
+
+  var themeLight = ThemeData(
+    brightness: Brightness.light,
+    primarySwatch: Colors.green,
+    indicatorColor: Colors.deepOrange,
+    fontFamily: "Lobster",
+    textTheme: TextTheme(
+        headline1: TextStyle(fontSize: 40, color: Colors.deepOrangeAccent),
+        headline6: TextStyle(fontSize: 30, color: Colors.green)),
+  );
+
+  var darkTheme = ThemeData(
+      brightness: Brightness.dark,
+      primarySwatch: Colors.amber,
+      fontFamily: "Roboto");
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      theme: _isDarkTheme ? darkTheme : themeLight,
       home: DefaultTabController(
         length: 8,
         child: Scaffold(
           appBar: AppBar(
-            title: Text('My Semester Tracker'),
+            title: Text(
+              'My Semester Tracker',
+            ),
+            actions: [
+              Switch(
+                value: _isDarkTheme,
+                onChanged: (value) {
+                  setState(() {
+                    _isDarkTheme = value;
+                  });
+
+                  print('Switching value ' + value.toString());
+                },
+              ),
+            ],
             backgroundColor: Colors.deepPurple,
             bottom: TabBar(
               indicatorColor: Colors.white,

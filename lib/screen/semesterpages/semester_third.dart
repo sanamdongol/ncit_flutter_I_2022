@@ -10,6 +10,10 @@ class SemesterThirdPage extends StatefulWidget {
 class _SemesterThirdPageState extends State<SemesterThirdPage> {
   @override
   Widget build(BuildContext context) {
-    return Container(color: Colors.greenAccent,);
+    return MaterialApp(
+      theme:
+          ThemeData(brightness: Brightness.light, primarySwatch: Colors.green),
+      home: Container(),
+    );
   }
 }
