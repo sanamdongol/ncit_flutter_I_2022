@@ -1,3 +1,4 @@
+import 'package:dayone/grade_record.dart';
 import 'package:dayone/screen/forgot_password.dart';
 import 'package:dayone/screen/login.dart';
 import 'package:dayone/screen/register_page.dart';
@@ -18,7 +19,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const LoginPage(),
+      home: const GradeRecord(),
     );
   }
 }
