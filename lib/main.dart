@@ -1,8 +1,8 @@
-import 'package:dayone/grade_record.dart';
 import 'package:dayone/screen/forgot_password.dart';
-import 'package:dayone/screen/login.dart';
 import 'package:dayone/screen/register_page.dart';
 import 'package:flutter/material.dart';
+
+import 'database/grade_record.dart';
 
 void main() {
   runApp(const MyApp());
